@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>b6fb9c5c-2631-47bd-8807-07dce04ff978</ProjectGuid>
+    <ProjectGuid>{B6FB9C5C-2631-47BD-8807-07DCE04FF978}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>libcdx</RootNamespace>
@@ -30,24 +30,86 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="ApplicationAdapter.cs" />
+    <Compile Include="ApplicationListener.cs" />
+    <Compile Include="Audio\IMusic.cs" />
+    <Compile Include="Audio\ISound.cs" />
+    <Compile Include="Files\FileHandle.cs" />
+    <Compile Include="Files\FileType.cs" />
+    <Compile Include="Graphics\BufferFormat.cs" />
+    <Compile Include="Graphics\Cursor.cs" />
+    <Compile Include="Graphics\DisplayMode.cs" />
+    <Compile Include="Graphics\GL20.cs" />
+    <Compile Include="Graphics\GL30.cs" />
+    <Compile Include="Graphics\GLUtils\GLVersion.cs" />
+    <Compile Include="Graphics\Monitor.cs" />
+    <Compile Include="Graphics\Pixmap.cs" />
+    <Compile Include="IAudio.cs" />
+    <Compile Include="Audio\IAudioDevice.cs" />
+    <Compile Include="Audio\IAudioRecorder.cs" />
+    <Compile Include="Cdx.cs" />
+    <Compile Include="IFiles.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="IGraphics.cs" />
+    <Compile Include="IInput.cs" />
+    <Compile Include="InputAdapter.cs" />
+    <Compile Include="InputEventQueue.cs" />
+    <Compile Include="InputMultiplexer.cs" />
+    <Compile Include="IInputProcessor.cs" />
+    <Compile Include="ILifecycleListener.cs" />
+    <Compile Include="Math\MathUtils.cs" />
+    <Compile Include="INet.cs" />
+    <Compile Include="Net\Enum\Protocol.cs" />
+    <Compile Include="Net\HttpMethods.cs" />
+    <Compile Include="Net\HttpRequest.cs" />
+    <Compile Include="Net\HttpStatus.cs" />
+    <Compile Include="Net\IHttpResponse.cs" />
+    <Compile Include="Net\IHttpResponseListener.cs" />
+    <Compile Include="Net\IServerSocket.cs" />
+    <Compile Include="Net\ISocket.cs" />
+    <Compile Include="Net\ServerSocketHints.cs" />
+    <Compile Include="Net\SocketHints.cs" />
+    <Compile Include="IPreferences.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IScreen.cs" />
+    <Compile Include="ScreenAdapter.cs" />
+    <Compile Include="TimSort.cs" />
+    <Compile Include="Utils\Array.cs" />
+    <Compile Include="Utils\ArrayIterable.cs" />
+    <Compile Include="Utils\ArrayIterator.cs" />
+    <Compile Include="Utils\ArrayReflection.cs" />
+    <Compile Include="Utils\ComparableTimSort.cs" />
+    <Compile Include="Utils\Enum\ApplicationType.cs" />
+    <Compile Include="Utils\CdxRuntimeException.cs" />
+    <Compile Include="Utils\Enum\GraphicsType.cs" />
+    <Compile Include="Utils\IClipboard.cs" />
+    <Compile Include="Utils\IntArray.cs" />
+    <Compile Include="Utils\IPredicate.cs" />
+    <Compile Include="Utils\PredicateIterable.cs" />
+    <Compile Include="Utils\PredicateIterator.cs" />
+    <Compile Include="Utils\QuickSelect.cs" />
+    <Compile Include="Utils\Select.cs" />
+    <Compile Include="Utils\Sort.cs" />
+    <Compile Include="Utils\TimeUtils.cs" />
+    <Compile Include="Version.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="notes.md" />
+    <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Graphics\g2d\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +119,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>
